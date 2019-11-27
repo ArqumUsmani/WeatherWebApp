@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather App</title>
+<link rel="stylesheet" href="css/materialize.min.css">
+<link rel="stylesheet" href="css/custom.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/materialize.min.js"></script>
+
+
+<style>
+    .main{
+        background-image: url(image/background.jpg);
+        background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+        height: 100vh; /* You must set a specified height */
+    }
+    .header{
+        display: grid;
+        grid-template-columns: 1fr .5fr;
+        padding: 2%;
+    }
+    .logo span .material-icons, .logo span{
+        font-size: 3.5rem;
+        color: #efefef;
+    }
+    .select-wrapper input.select-dropdown{
+        background-color: #feca3e;
+        text-align: center;
+        font-size: 25px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        border-radius: 10px;
+    }
+    .details{
+        display: grid;
+        margin-top:15%;
+        width: 90vw;
+
+        color: #efefef;
+        grid-template-rows: 1fr 1fr;
+    }
+    .weather-details-initial{
+        display: grid;
+        width: 20vw;
+        margin-left: 8%;
+        /* justify-items: center; */
+        grid-template-rows: .2fr 1fr;
+    }
+    .weather-details-initial .date{
+        font-size: 1rem;
+        color: #feca3e;
+    }
+    .weather-details-initial .city-name,.weather-details-initial .city-name .material-icons{
+        font-size: 4.5rem;
+    }
+    .weather-details-initial .material-icons{
+        margin-top: 18px;
+    }
+    .weather-temp-details{
+        background-color:rgba(181,189,199,.2) ;
+        display: grid;
+        padding-top: 2%;
+        /* justify-items: center; */
+        grid-template-columns: 1fr .5fr .5fr .5fr .5fr;
+    }
+    .current-weather-temp{
+        font-size: 74px;
+        justify-self:  center;
+
+    }
+    .current-weather-temp p{
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+    }
+    .more-weather{
+        font-size: 30px;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        margin-bottom: 10px;
+    margin-top: 25px;
+
+    }
+    .more-weather .material-icons{
+        font-size: 30px;
+    }
+    .more-weather .weather-percentage{
+        margin-left: 20%;
+        font-size: 40px;
+    }
+</style>
+</head>
+
+<body>
+    
+<div class="main">
+    <div class="row">
+        <div class="header">
+            <div class="logo">
+                <span><i class="material-icons left">cloud_queue</i>Weather App</span>
+            </div>
+            <div class="input-field col s4">
+                <select>
+                    <option value="" selected>Karachi</option>
+                    <option value="1">Islamabad</option>
+                    <option value="2">Lahore</option>
+                    <option value="3">Multan</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="details">
+        <div class="weather-details-initial">
+            <div class="date">November 27</div>
+            <div class="city-name">
+                <span class="left">Karachi <i class="material-icons right">arrow_right_alt</i></span> 
+            </div>
+        </div>
+        <div class="weather-temp-details">
+            <div class="current-weather-temp">
+                <span>21&deg;C</span>
+                <p>Feels Like 19&deg;C</p>
+            </div>
+            <div class="more-weather">
+                <div>                <span><i class="material-icons left">cloud_queue</i>Rain</span>
+                </div>
+                <div>
+                    <span class="weather-percentage">0%</span>
+                </div>
+            </div>
+            <div class="more-weather">
+                    <div>                <span><i class="material-icons left">cloud_queue</i>Wind Speed</span>
+                    </div>
+                    <div>
+                        <span class="weather-percentage">6 Km/h</span>
+                    </div>
+            </div>
+            <div class="more-weather">
+                    <div>                <span><i class="material-icons left">cloud_queue</i>Humidity</span>
+                    </div>
+                    <div>
+                        <span class="weather-percentage">0%</span>
+                    </div>
+            </div>
+            <div class="more-weather">
+                    <div>                <span><i class="material-icons left">cloud_queue</i>UV Index</span>
+                    </div>
+                    <div>
+                        <span class="weather-percentage">0%</span>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<script>
+$('select').formSelect()
+</script>
+</body>
+</html>
